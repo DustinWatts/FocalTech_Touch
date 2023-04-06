@@ -10,7 +10,7 @@
 
 // Register addresses
 
-// TODO Change all FT6236 addresses to the format FT****
+// TODO Change all FT6236 addresses to the format FT_****
 // Make sure the FocalTech.cpp matches that.
 
 #define FT6236_ADDR 0x38           // I2C address
