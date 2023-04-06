@@ -26,14 +26,20 @@ boolean FocalTech::begin(uint8_t thresh, int8_t sda, int8_t scl)
 {
     
     // Begin I2C
-    if (sda != -1 && scl != -1)
-    {
-        Wire.begin(sda, scl);
-    }
-    else
-    {
-        Wire.begin();
-    }
+    #if defined(ESP32)
+        if (sda != -1 && scl != -1)
+        {
+            Wire.begin(sda, scl);
+        }
+        else
+        {
+            Wire.begin();
+        }
+    #else
+
+    Wire.begin();
+
+    #endif // defined(ESP32)
 
     //Check if our chip has the correct Vendor ID
     if (readRegister8(FT_REG_VENDID) != FT6236_VENDID)
