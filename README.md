@@ -4,6 +4,7 @@
 
 # FocalTech Touch IC library
 ![Compile](https://github.com/DustinWatts/FocalTech_Touch/actions/workflows/compile.yml/badge.svg)
+![Compile](https://github.com/DustinWatts/FocalTech_Touch/actions/workflows/compile-arduino.yml/badge.svg)
 [![](https://badgen.net/github/last-commit/DustinWatts/FocalTech_Touch)](https://github.com/DustinWatts/FocalTech_Touch/commits/main)
 [![](https://badgen.net/github/release/DustinWatts/FocalTech_Touch)](https://github.com/DustinWatts/FocalTech_Touch/releases)
 
