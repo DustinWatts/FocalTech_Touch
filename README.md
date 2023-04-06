@@ -1,8 +1,8 @@
-# FocalTech Touch IC library for Arduino IDE
-[![](https://badgen.net/github/last-commit/DustinWatts/FT6236)](https://github.com/DustinWatts/FT6236/commits/main)
-[![](https://badgen.net/github/release/DustinWatts/FT6236)](https://github.com/DustinWatts/FT6236/releases)
+# FocalTech Touch IC library
+[![](https://badgen.net/github/last-commit/DustinWatts/FocalTech_Touch)](https://github.com/DustinWatts/FocalTech_Touch/commits/main)
+[![](https://badgen.net/github/release/DustinWatts/FocalTech_Touch)](https://github.com/DustinWatts/FocalTech_Touch/releases)
 
-Arduino IDE library for initially written purely for the the FocalTech FT6236 touch controller. But more IC's are supported. At the moment the following IC's are supported:
+Arduino IDE library for initially written purely for the the FocalTech touch controllers. At the moment the following IC's are supported:
 
 - FT6236 (ChipID 0x36)
 - FT6206 (ChipID 0x06)
@@ -12,11 +12,11 @@ Arduino IDE library for initially written purely for the the FocalTech FT6236 to
 
 First, include the library in your sketch:
 
-`#include <FT6236.h>`
+`#include <FocalTech.h>`
 
 Next, create the object to be used (I use "ts" here, but you can use whatever you like):
 
-`FT6236 ts = FT6236();`
+`FocalTech ts = FocalTech();`
 
 Next, in the setup() use begin to start the touch controller:
 
@@ -54,9 +54,9 @@ void loop(void)
 At the and of a short loop a delay is needed to give the controller some time to clear it's registers and be ready for a next touch. If you have a short loop and don't add this delay, you run the risk of a touch being picked up multiple times where it was meant to be just a single touch.
 
 # Datasheet
+Datasheets for the supported IC's can be found here:
 
-The datasheet can be found all over the internet, but this is one with the register descriptions in it. Which comes in handy!
-http://dustinwatts.nl/docs/FT6236-FocalTechSystems.pdf
+FT62*6: http://dustinwatts.nl/docs/FT6236-FocalTechSystems.pdf
 
 ## Support Me
 
