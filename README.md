@@ -14,6 +14,10 @@ Library for the FocalTech touch controllers. At the moment the following IC's ar
 - FT6206 (ChipID 0x06)
 - FT6236U (ChipID 0x64)
 
+And there are more to come!
+
+_Although this library supports the Arduino boards, the maximum VCC voltage and on the data pins is 3.3V. So if you plan to use this with an Arduino, be sure to not exceed 3.3V! (use an Arduino board that runs on 3.3V or levelshifters and a voltage regulator)_
+
 # Usage
 
 First, include the library in your sketch:
