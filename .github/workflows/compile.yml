@@ -7,7 +7,7 @@ on: [workflow_dispatch, push, pull_request]
 
 jobs:
   build:
-    name: Test compiling for ESP32
+    name: Compile for ESP32
     runs-on: ubuntu-latest
 
     steps:
