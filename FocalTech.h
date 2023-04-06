@@ -46,10 +46,10 @@ public:
   int16_t z;
 };
 
-class FT6236
+class FocalTech
 {
 public:
-  FT6236(void);
+  FocalTech(void);
   void debug(void);
   boolean begin(uint8_t thresh = FT6236_DEFAULT_THRESHOLD, int8_t sda = -1, int8_t scl = -1);
   uint8_t touched(void);
