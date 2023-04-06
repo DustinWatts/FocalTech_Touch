@@ -1,7 +1,5 @@
 /*
-This is a library for the FT6236 touchscreen controller by FocalTech.
-
-The FT6236 and FT6236u work the same way.
+This is a library for the FocalTech touchscreen controllers.
 
 A lot of this library is originally written by Limor Fried/Ladyada.
 
@@ -17,14 +15,14 @@ MIT license, all text above must be included in any redistribution
 */
 
 #include "Arduino.h"
-#include "FT6236.h"
+#include "FocalTech.h"
 #include <Wire.h>
 
 /* New class. */
-FT6236::FT6236() { touches = 0; }
+FocalTech::FocalTech() { touches = 0; }
 
-/* Start I2C and check if the FT6236 is found. */
-boolean FT6236::begin(uint8_t thresh, int8_t sda, int8_t scl)
+/* Start I2C and check if a FocalTech controller is found. */
+boolean FocalTech::begin(uint8_t thresh, int8_t sda, int8_t scl)
 {
     if (sda != -1 && scl != -1)
     {
@@ -55,7 +53,7 @@ boolean FT6236::begin(uint8_t thresh, int8_t sda, int8_t scl)
 }
 
 /* Returns the number of touches */
-uint8_t FT6236::touched(void)
+uint8_t FocalTech::touched(void)
 {
     uint8_t n = readRegister8(FT6236_REG_NUMTOUCHES);
     if (n > 2)
@@ -66,7 +64,7 @@ uint8_t FT6236::touched(void)
 }
 
 /* Get a touch point */
-TS_Point FT6236::getPoint(uint8_t n)
+TS_Point FocalTech::getPoint(uint8_t n)
 {
     readData();
     if ((touches == 0) || (n > 1))
@@ -79,7 +77,7 @@ TS_Point FT6236::getPoint(uint8_t n)
     }
 }
 
-void FT6236::readData(void)
+void FocalTech::readData(void)
 {
 
     uint8_t i2cdat[16];
@@ -110,7 +108,7 @@ void FT6236::readData(void)
 }
 
 /* Reading a byte from a register */
-uint8_t FT6236::readRegister8(uint8_t reg)
+uint8_t FocalTech::readRegister8(uint8_t reg)
 {
     uint8_t x;
 
@@ -125,7 +123,7 @@ uint8_t FT6236::readRegister8(uint8_t reg)
 }
 
 /* Writing a byte to a register */
-void FT6236::writeRegister8(uint8_t reg, uint8_t val)
+void FocalTech::writeRegister8(uint8_t reg, uint8_t val)
 {
 
     Wire.beginTransmission(FT6236_ADDR);
@@ -135,7 +133,7 @@ void FT6236::writeRegister8(uint8_t reg, uint8_t val)
 }
 
 /* Debug */
-void FT6236::debug(void)
+void FocalTech::debug(void)
 {
     Serial.print("Vend ID: 0x");
     Serial.println(readRegister8(FT6236_REG_VENDID), HEX);
