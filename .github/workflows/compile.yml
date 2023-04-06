@@ -1,7 +1,7 @@
 # This work flow compiles the library for the ESP32 
 # Created 6-4-2023
 # by Dustin Watts
-name: Test Compile for ESP32 on Arduino Core
+name: Compile for ESP32
 
 on: [workflow_dispatch, push, pull_request]
 
