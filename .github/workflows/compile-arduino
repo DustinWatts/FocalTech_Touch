@@ -1,0 +1,21 @@
+# This work flow compiles the library for the ESP32 
+# Created 6-4-2023
+# by Dustin Watts
+name: Compile for Arduino
+
+on: [workflow_dispatch, push, pull_request]
+
+jobs:
+  build:
+    name: Compile for Arduino
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+        
+    - name: Test compile with Arduino CLI
+      uses: ArminJo/arduino-test-compile@v3
+      with: 
+        arduino-board-fqbn: arduino:avr:uno
+        cli-version: 0.22.0
