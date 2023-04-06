@@ -8,7 +8,7 @@
 #include "Arduino.h"
 #include <Wire.h>
 
-//Register addresses
+// Register addresses
 
 #define FT6236_ADDR 0x38           // I2C address
 #define FT6236_G_FT5201ID 0xA8     // FocalTech's panel ID
