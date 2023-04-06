@@ -1,8 +1,12 @@
+# WIP
+
+**This library is a work in progress and might not (probably won't) work until the first release!**
+
 # FocalTech Touch IC library
 [![](https://badgen.net/github/last-commit/DustinWatts/FocalTech_Touch)](https://github.com/DustinWatts/FocalTech_Touch/commits/main)
 [![](https://badgen.net/github/release/DustinWatts/FocalTech_Touch)](https://github.com/DustinWatts/FocalTech_Touch/releases)
 
-Arduino IDE library for initially written purely for the the FocalTech touch controllers. At the moment the following IC's are supported:
+Library for the FocalTech touch controllers. At the moment the following IC's are supported:
 
 - FT6236 (ChipID 0x36)
 - FT6206 (ChipID 0x06)
