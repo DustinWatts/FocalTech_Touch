@@ -14,7 +14,7 @@ Written by Limor Fried/Ladyada for Adafruit Industries.
 MIT license, all text above must be included in any redistribution
 */
 
-#include "Arduino.h"
+#include <Arduino.h>
 #include "FocalTech.h"
 #include <Wire.h>
 
@@ -24,6 +24,8 @@ FocalTech::FocalTech() { touches = 0; }
 /* Start I2C and check if a FocalTech controller is found. */
 boolean FocalTech::begin(uint8_t thresh, int8_t sda, int8_t scl)
 {
+    
+    // Begin I2C
     if (sda != -1 && scl != -1)
     {
         Wire.begin(sda, scl);
@@ -33,21 +35,21 @@ boolean FocalTech::begin(uint8_t thresh, int8_t sda, int8_t scl)
         Wire.begin();
     }
 
-    // Adjust threshold
-    writeRegister8(FT_REG_THRESHHOLD, thresh);
-
     //Check if our chip has the correct Vendor ID
     if (readRegister8(FT_REG_VENDID) != FT6236_VENDID)
     {
         return false;
     }
-    //Check if our chip has the correct Chip ID.
+    //Check if our chip has the one of the correct Chip ID's.
     uint8_t id = readRegister8(FT_REG_CHIPID);
     if ((id != FT6236_CHIPID) && (id != FT6236U_CHIPID) &&
       (id != FT6206_CHIPID))
     {
         return false;
     }
+
+    // Adjust threshold
+    writeRegister8(FT_REG_THRESHHOLD, thresh);
 
     return true;
 }

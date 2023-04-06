@@ -5,7 +5,7 @@
 #ifndef FocalTech_H
 #define FocalTech_H
 
-#include "Arduino.h"
+#include <Arduino.h>
 #include <Wire.h>
 
 // FocalTech I2C Address
