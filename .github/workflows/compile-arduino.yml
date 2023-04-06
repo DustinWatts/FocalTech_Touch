@@ -1,4 +1,4 @@
-# This work flow compiles the library for the ESP32 
+# This workflow compiles the library for the Arduino 
 # Created 6-4-2023
 # by Dustin Watts
 name: Compile for Arduino
