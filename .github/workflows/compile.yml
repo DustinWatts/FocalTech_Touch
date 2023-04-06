@@ -1,0 +1,22 @@
+# This work flow compiles the library for the ESP32 
+# Created 6-4-2023
+# by Dustin Watts
+name: Test Compile for ESP32 on Arduino Core
+
+on: [workflow_dispatch, push, pull_request]
+
+jobs:
+  build:
+    name: Test compiling for ESP32
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+        
+    - name: Test compile with Arduino CLI
+      uses: ArminJo/arduino-test-compile@v3
+      with: 
+        arduino-board-fqbn: esp32:esp32:esp32:PartitionScheme=no_ota
+        cli-version: 0.22.0
+        platform-url: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
