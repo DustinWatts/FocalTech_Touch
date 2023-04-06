@@ -41,12 +41,12 @@ boolean FocalTech::begin(uint8_t thresh, int8_t sda, int8_t scl)
 
     #endif // defined(ESP32)
 
-    //Check if our chip has the correct Vendor ID
+    // Check if our chip has the correct Vendor ID
     if (readRegister8(FT_REG_VENDID) != FT6236_VENDID)
     {
         return false;
     }
-    //Check if our chip has the one of the correct Chip ID's.
+    // Check if our chip has the one of the correct Chip ID's.
     uint8_t id = readRegister8(FT_REG_CHIPID);
     if ((id != FT6236_CHIPID) && (id != FT6236U_CHIPID) &&
       (id != FT6206_CHIPID))
