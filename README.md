@@ -3,6 +3,7 @@
 **This library is a work in progress and might not (probably won't) work until the first release!**
 
 # FocalTech Touch IC library
+![Compile](https://github.com/DustinWatts/FocalTech_Touch/actions/workflows/compile.yml/badge.svg)
 [![](https://badgen.net/github/last-commit/DustinWatts/FocalTech_Touch)](https://github.com/DustinWatts/FocalTech_Touch/commits/main)
 [![](https://badgen.net/github/release/DustinWatts/FocalTech_Touch)](https://github.com/DustinWatts/FocalTech_Touch/releases)
 
