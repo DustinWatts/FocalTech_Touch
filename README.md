@@ -1,2 +1,2 @@
 # FocalTech_Touch
-Lirabry for the FocalTech touch controllers
+Library for the FocalTech touch controllers
