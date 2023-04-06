@@ -1,7 +1,7 @@
 /* 
-Title: FT6236 Simple touch example.
+Title: Simple touch example.
 By: Dustin Watts
-Date: October 18th 2020
+Date: April 6th 2023
 
 Description: 
 
