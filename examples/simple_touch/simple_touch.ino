@@ -11,7 +11,7 @@ to the serial output.
 
 #include <FocalTech.h>
 
-FT6236 ts = FT6236();
+FocalTech ts = FocalTech();
 
 void setup(void)
 {

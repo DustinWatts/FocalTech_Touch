@@ -34,15 +34,15 @@ boolean FocalTech::begin(uint8_t thresh, int8_t sda, int8_t scl)
     }
 
     // Adjust threshold
-    writeRegister8(FT6236_REG_THRESHHOLD, thresh);
+    writeRegister8(FT_REG_THRESHHOLD, thresh);
 
     //Check if our chip has the correct Vendor ID
-    if (readRegister8(FT6236_REG_VENDID) != FT6236_VENDID)
+    if (readRegister8(FT_REG_VENDID) != FT6236_VENDID)
     {
         return false;
     }
     //Check if our chip has the correct Chip ID.
-    uint8_t id = readRegister8(FT6236_REG_CHIPID);
+    uint8_t id = readRegister8(FT_REG_CHIPID);
     if ((id != FT6236_CHIPID) && (id != FT6236U_CHIPID) &&
       (id != FT6206_CHIPID))
     {
@@ -55,7 +55,7 @@ boolean FocalTech::begin(uint8_t thresh, int8_t sda, int8_t scl)
 /* Returns the number of touches */
 uint8_t FocalTech::touched(void)
 {
-    uint8_t n = readRegister8(FT6236_REG_NUMTOUCHES);
+    uint8_t n = readRegister8(FT_REG_NUMTOUCHES);
     if (n > 2)
     {
         n = 0;
@@ -81,11 +81,11 @@ void FocalTech::readData(void)
 {
 
     uint8_t i2cdat[16];
-    Wire.beginTransmission(FT6236_ADDR);
+    Wire.beginTransmission(FT_ADDR);
     Wire.write((byte)0);
     Wire.endTransmission();
 
-    Wire.requestFrom((byte)FT6236_ADDR, (byte)16);
+    Wire.requestFrom((byte)FT_ADDR, (byte)16);
     for (uint8_t i = 0; i < 16; i++)
         i2cdat[i] = Wire.read();
 
@@ -112,11 +112,11 @@ uint8_t FocalTech::readRegister8(uint8_t reg)
 {
     uint8_t x;
 
-    Wire.beginTransmission(FT6236_ADDR);
+    Wire.beginTransmission(FT_ADDR);
     Wire.write((byte)reg);
     Wire.endTransmission();
 
-    Wire.requestFrom((byte)FT6236_ADDR, (byte)1);
+    Wire.requestFrom((byte)FT_ADDR, (byte)1);
     x = Wire.read();
 
     return x;
@@ -126,7 +126,7 @@ uint8_t FocalTech::readRegister8(uint8_t reg)
 void FocalTech::writeRegister8(uint8_t reg, uint8_t val)
 {
 
-    Wire.beginTransmission(FT6236_ADDR);
+    Wire.beginTransmission(FT_ADDR);
     Wire.write((byte)reg);
     Wire.write((byte)val);
     Wire.endTransmission();
@@ -136,15 +136,15 @@ void FocalTech::writeRegister8(uint8_t reg, uint8_t val)
 void FocalTech::debug(void)
 {
     Serial.print("Vend ID: 0x");
-    Serial.println(readRegister8(FT6236_REG_VENDID), HEX);
+    Serial.println(readRegister8(FT_REG_VENDID), HEX);
     Serial.print("Chip ID: 0x");
-    Serial.println(readRegister8(FT6236_REG_CHIPID), HEX);
+    Serial.println(readRegister8(FT_REG_CHIPID), HEX);
     Serial.print("Firm V: ");
-    Serial.println(readRegister8(FT6236_REG_FIRMVERS));
+    Serial.println(readRegister8(FT_REG_FIRMVERS));
     Serial.print("Point Rate Hz: ");
-    Serial.println(readRegister8(FT6236_REG_POINTRATE));
+    Serial.println(readRegister8(FT_REG_POINTRATE));
     Serial.print("Thresh: ");
-    Serial.println(readRegister8(FT6236_REG_THRESHHOLD));
+    Serial.println(readRegister8(FT_REG_THRESHHOLD));
 }
 
 TS_Point::TS_Point(void) { x = y = z = 0; }
