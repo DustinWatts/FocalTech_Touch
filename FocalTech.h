@@ -10,6 +10,9 @@
 
 // Register addresses
 
+// TODO Change all FT6236 addresses to the format FT****
+// Make sure the FocalTech.cpp matches that.
+
 #define FT6236_ADDR 0x38           // I2C address
 #define FT6236_G_FT5201ID 0xA8     // FocalTech's panel ID
 #define FT6236_REG_NUMTOUCHES 0x02 // Number of touch points
