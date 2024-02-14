@@ -66,7 +66,8 @@ At the and of a short loop a delay is needed to give the controller some time to
 # Datasheet
 Datasheets for the supported IC's can be found here:
 
-FT62*6: http://dustinwatts.nl/docs/FT6236-FocalTechSystems.pdf
+FT62x6: http://dustinwatts.nl/docs/FT6236-FocalTechSystems.pdf
+FT5436: https://focuslcds.com/wp-content/uploads/Drivers/FT5436.pdf
 
 ## Support Me
 
