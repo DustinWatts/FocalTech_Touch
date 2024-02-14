@@ -13,6 +13,8 @@ Library for the FocalTech touch controllers. At the moment the following IC's ar
 - FT6236 (ChipID 0x36)
 - FT6206 (ChipID 0x06)
 - FT6236U (ChipID 0x64)
+- FT5436 (ChipID 0x54)
+- FT6234 (ChipID 0x54)
 
 And there are more to come!
 
