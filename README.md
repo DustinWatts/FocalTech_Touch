@@ -1,6 +1,6 @@
 # WIP
 
-**This library is a work in progress and some things might not. If you find something, please open an issue. Thanks!**
+**This library is a work in progress and some things might not work. If you find something, please open an issue. Thanks!**
 
 # FocalTech Touch IC library
 ![Compile](https://github.com/DustinWatts/FocalTech_Touch/actions/workflows/compile.yml/badge.svg)
