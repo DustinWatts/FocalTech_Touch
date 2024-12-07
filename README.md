@@ -1,6 +1,6 @@
 # WIP
 
-**This library is a work in progress and might not (probably won't) work until the first release!**
+**This library is a work in progress and some things might not. If you find something, please open an issue. Thanks!**
 
 # FocalTech Touch IC library
 ![Compile](https://github.com/DustinWatts/FocalTech_Touch/actions/workflows/compile.yml/badge.svg)
@@ -66,10 +66,9 @@ void loop(void)
 At the and of a short loop a delay is needed to give the controller some time to clear it's registers and be ready for a next touch. If you have a short loop and don't add this delay, you run the risk of a touch being picked up multiple times where it was meant to be just a single touch.
 
 # Datasheet
-Datasheets for the supported IC's can be found here:
+Datasheets for some of the supported IC's can in de the **Datasheets** folder.
 
-FT62x6: http://dustinwatts.nl/docs/FT6236-FocalTechSystems.pdf
-FT5436: https://focuslcds.com/wp-content/uploads/Drivers/FT5436.pdf
+**If you have a datasheet for an IC that is not in that folder, please create a pull request or open an issue, with the datasheet attached.** Thanks in advance!
 
 ## Support Me
 
@@ -84,4 +83,4 @@ If you like what I am doing, there are a number of ways you can support me.
 
 ## Get help
 
-For quick access to help you can join my Discord server where I have a dedicated #freetouchdeck channel. https://discord.gg/RE3XevS
+For quick access to help you can join my Discord server. https://discord.gg/RE3XevS
